@@ -14,9 +14,10 @@ class LogEntry(models.Model):
     class Meta:
         verbose_name_plural = 'Log entries'
 
-    def clean(self):
+    def save(self, *args, **kwargs):
         if self.date < datetime.date.today():
             self.late_log = True
+        super(LogEntry, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.project
