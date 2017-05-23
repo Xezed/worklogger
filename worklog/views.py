@@ -1,5 +1,6 @@
 from django.views.generic.base import TemplateView
 from rest_framework import viewsets
+from rest_framework.filters import SearchFilter
 from rest_framework.permissions import IsAuthenticated
 
 from worklog.models import LogEntry
@@ -13,6 +14,8 @@ class HomePage(TemplateView):
 class LogEntryViewSet(viewsets.ModelViewSet):
     serializer_class = LogEntrySerializer
     permission_classes = [IsAuthenticated]
+    filter_backends = [SearchFilter]
+    search_fields = ['date']
 
     def get_queryset(self):
         return LogEntry.objects.filter(user=self.request.user)
