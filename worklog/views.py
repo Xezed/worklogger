@@ -1,5 +1,6 @@
 from django.views.generic.base import TemplateView
 from rest_framework import viewsets
+from rest_framework.permissions import IsAuthenticated
 
 from worklog.models import LogEntry
 from worklog.serializers import LogEntrySerializer
@@ -11,6 +12,7 @@ class HomePage(TemplateView):
 
 class LogEntryViewSet(viewsets.ModelViewSet):
     serializer_class = LogEntrySerializer
+    permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
         return LogEntry.objects.filter(user=self.request.user)
