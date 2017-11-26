@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { WorklogListComponent } from './worklog-list/worklog-list.component';
 import { WorklogDetailComponent } from './worklog-detail/worklog-detail.component';
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,10 @@ import { WorklogDetailComponent } from './worklog-detail/worklog-detail.componen
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(
+      [{ path: '', component: WorklogListComponent}]
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
