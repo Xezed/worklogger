@@ -1,25 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { WorklogListComponent } from './worklog-list/worklog-list.component';
 import { WorklogDetailComponent } from './worklog-detail/worklog-detail.component';
 import {RouterModule} from "@angular/router";
+import { LoginComponent } from './login/login.component';
+import { RegistrationComponent } from './registration/registration.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     WorklogListComponent,
-    WorklogDetailComponent
+    WorklogDetailComponent,
+    LoginComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     RouterModule.forRoot(
-      [{ path: '', component: WorklogListComponent}]
+      [{ path: '**', component: LoginComponent}]
     )
   ],
   providers: [],
