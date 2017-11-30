@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AuthHttp } from "ng2-jwt/ng2-jwt";
+import { AuthHttp } from "angular2-jwt/angular2-jwt";
 
 @Injectable()
 export class EntriesService {
@@ -8,7 +8,7 @@ export class EntriesService {
   }
 
   getEntries() {
-    return this.authHttp.get('/api/orders')
+    return this.authHttp.get('/entries')
       .map(response => response.json());
   }
 }

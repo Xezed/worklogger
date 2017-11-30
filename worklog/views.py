@@ -8,7 +8,7 @@ from worklog.serializers import LogEntrySerializer
 
 
 class HomePage(TemplateView):
-    template_name = 'angular/index.html'
+    template_name = 'dist/index.html'
 
 
 class LogEntryViewSet(viewsets.ModelViewSet):

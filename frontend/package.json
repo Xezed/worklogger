@@ -23,10 +23,10 @@
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
+    "angular2-jwt": "^0.2.3",
     "bootstrap": "^4.0.0-beta.2",
     "bootstrap4": "0.0.1-security",
     "core-js": "^2.4.1",
-    "ng2-jwt": "^0.2.0",
     "rxjs": "^5.1.0",
     "save": "^2.3.1",
     "zone.js": "^0.8.4"

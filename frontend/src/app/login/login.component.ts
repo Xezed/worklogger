@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {AuthService} from "../services/auth.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -7,9 +9,12 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  invalidLogin: boolean;
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private router: Router,
+              private fb: FormBuilder,
+              private authService: AuthService) {
     this.createForm();
   }
 
@@ -21,6 +26,12 @@ export class LoginComponent {
   }
 
   onSubmit() {
-    console.log(this.loginForm)
+    this.authService.login(this.loginForm.value).subscribe(
+      result => {
+        if (result)
+          this.router.navigate(['/']);
+        else
+          this.invalidLogin = true;
+      })
   }
 }
