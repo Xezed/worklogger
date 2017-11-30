@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import {EntriesService} from "../services/entries.service";
 
 @Component({
   selector: 'app-worklog-list',
   templateUrl: './worklog-list.component.html',
   styleUrls: ['./worklog-list.component.css']
 })
-export class WorklogListComponent implements OnInit {
+export class WorklogListComponent {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  constructor(private entries: EntriesService) { }
 
 }

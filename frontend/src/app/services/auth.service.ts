@@ -15,6 +15,15 @@ export class AuthService {
     }
   }
 
+  registration(credentials){
+    return this.http.post('/auth/registration', JSON.stringify(credentials))
+      .map(response => {
+        let result = response.json();
+
+        console.log(result)
+      })
+  }
+
   login(credentials) {
    return this.http.post('/auth/login', JSON.stringify(credentials))
     .map(response => {

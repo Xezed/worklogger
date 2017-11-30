@@ -30,7 +30,11 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     ReactiveFormsModule,
     HttpModule,
     RouterModule.forRoot(
-      [{ path: '', component: LoginComponent}]
+      [
+        { path: '', component: WorklogListComponent, canActivate: [AuthGuard]},
+        { path: 'login', component: LoginComponent},
+        { path: 'registration', component: RegistrationComponent},
+      ]
     )
   ],
   providers: [
