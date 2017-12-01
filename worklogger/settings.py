@@ -141,6 +141,8 @@ REST_FRAMEWORK = {
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+        'worklogger.authentication.SessionCsrfExemptAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
     ),
 }
 

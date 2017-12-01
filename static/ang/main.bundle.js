@@ -4,6 +4,92 @@ webpackJsonp([1,4],{
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular2_jwt_angular2_jwt__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular2_jwt_angular2_jwt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular2_jwt_angular2_jwt__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__worklog_list_worklog_list_component__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__worklog_detail_worklog_detail_component__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__login_login_component__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__registration_registration_component__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_auth_service__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_entries_service__ = __webpack_require__(66);
+/* unused harmony export authHttpServiceFactory */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function authHttpServiceFactory(http, options) {
+    return new __WEBPACK_IMPORTED_MODULE_0_angular2_jwt_angular2_jwt__["AuthHttp"](new __WEBPACK_IMPORTED_MODULE_0_angular2_jwt_angular2_jwt__["AuthConfig"](), http, options);
+}
+var AppModule = /** @class */ (function () {
+    function AppModule() {
+    }
+    AppModule = __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_7__worklog_list_worklog_list_component__["a" /* WorklogListComponent */],
+                __WEBPACK_IMPORTED_MODULE_8__worklog_detail_worklog_detail_component__["a" /* WorklogDetailComponent */],
+                __WEBPACK_IMPORTED_MODULE_9__login_login_component__["a" /* LoginComponent */],
+                __WEBPACK_IMPORTED_MODULE_10__registration_registration_component__["a" /* RegistrationComponent */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* ReactiveFormsModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_http__["HttpModule"],
+                __WEBPACK_IMPORTED_MODULE_5__angular_router__["a" /* RouterModule */].forRoot([
+                    { path: '', component: __WEBPACK_IMPORTED_MODULE_7__worklog_list_worklog_list_component__["a" /* WorklogListComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */]] },
+                    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_9__login_login_component__["a" /* LoginComponent */] },
+                    { path: 'registration', component: __WEBPACK_IMPORTED_MODULE_10__registration_registration_component__["a" /* RegistrationComponent */] },
+                ])
+            ],
+            providers: [
+                __WEBPACK_IMPORTED_MODULE_11__services_auth_service__["a" /* AuthService */],
+                __WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */],
+                __WEBPACK_IMPORTED_MODULE_13__services_entries_service__["a" /* EntriesService */],
+                {
+                    provide: __WEBPACK_IMPORTED_MODULE_0_angular2_jwt_angular2_jwt__["AuthHttp"],
+                    useFactory: authHttpServiceFactory,
+                    deps: [__WEBPACK_IMPORTED_MODULE_4__angular_http__["Http"]]
+                }
+            ],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
+        })
+    ], AppModule);
+    return AppModule;
+}());
+
+//# sourceMappingURL=app.module.js.map
+
+/***/ }),
+
+/***/ 101:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_auth_service__ = __webpack_require__(27);
@@ -43,7 +129,7 @@ var AuthGuard = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 101:
+/***/ 102:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -103,7 +189,7 @@ var LoginComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 102:
+/***/ 103:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -128,7 +214,7 @@ var PasswordValidation = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 103:
+/***/ 104:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -136,7 +222,7 @@ var PasswordValidation = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_auth_service__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__password_validator__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__password_validator__ = __webpack_require__(103);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegistrationComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -188,45 +274,6 @@ var RegistrationComponent = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=registration.component.js.map
-
-/***/ }),
-
-/***/ 104:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_jwt_angular2_jwt__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_jwt_angular2_jwt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular2_jwt_angular2_jwt__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EntriesService; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var EntriesService = /** @class */ (function () {
-    function EntriesService(authHttp) {
-        this.authHttp = authHttp;
-    }
-    EntriesService.prototype.getEntries = function () {
-        return this.authHttp.get('/entries')
-            .map(function (response) { return response.json(); });
-    };
-    EntriesService = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angular2_jwt_angular2_jwt__["AuthHttp"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angular2_jwt_angular2_jwt__["AuthHttp"]) === "function" && _a || Object])
-    ], EntriesService);
-    return EntriesService;
-    var _a;
-}());
-
-//# sourceMappingURL=entries.service.js.map
 
 /***/ }),
 
@@ -292,7 +339,7 @@ var WorklogDetailComponent = /** @class */ (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_entries_service__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_entries_service__ = __webpack_require__(66);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WorklogListComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -474,7 +521,7 @@ module.exports = "<app-worklog-detail *ngFor=\"let entry of entries\" [entry]=\"
 /***/ 225:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(93);
+module.exports = __webpack_require__(94);
 
 
 /***/ }),
@@ -553,7 +600,46 @@ var AuthService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 92:
+/***/ 66:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_jwt_angular2_jwt__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_jwt_angular2_jwt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular2_jwt_angular2_jwt__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EntriesService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var EntriesService = /** @class */ (function () {
+    function EntriesService(authHttp) {
+        this.authHttp = authHttp;
+    }
+    EntriesService.prototype.getEntries = function () {
+        return this.authHttp.get('/entries')
+            .map(function (response) { return response.json(); });
+    };
+    EntriesService = __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angular2_jwt_angular2_jwt__["AuthHttp"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angular2_jwt_angular2_jwt__["AuthHttp"]) === "function" && _a || Object])
+    ], EntriesService);
+    return EntriesService;
+    var _a;
+}());
+
+//# sourceMappingURL=entries.service.js.map
+
+/***/ }),
+
+/***/ 93:
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -562,19 +648,19 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 92;
+webpackEmptyContext.id = 93;
 
 
 /***/ }),
 
-/***/ 93:
+/***/ 94:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(97);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(98);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(100);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(107);
 
 
@@ -588,7 +674,7 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 
 /***/ }),
 
-/***/ 98:
+/***/ 99:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -616,89 +702,6 @@ var AppComponent = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=app.component.js.map
-
-/***/ }),
-
-/***/ 99:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular2_jwt_angular2_jwt__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular2_jwt_angular2_jwt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular2_jwt_angular2_jwt__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(98);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__worklog_list_worklog_list_component__ = __webpack_require__(106);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__worklog_detail_worklog_detail_component__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__login_login_component__ = __webpack_require__(101);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__registration_registration_component__ = __webpack_require__(103);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_auth_service__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__ = __webpack_require__(100);
-/* unused harmony export authHttpServiceFactory */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-function authHttpServiceFactory(http, options) {
-    return new __WEBPACK_IMPORTED_MODULE_0_angular2_jwt_angular2_jwt__["AuthHttp"](new __WEBPACK_IMPORTED_MODULE_0_angular2_jwt_angular2_jwt__["AuthConfig"](), http, options);
-}
-var AppModule = /** @class */ (function () {
-    function AppModule() {
-    }
-    AppModule = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["NgModule"])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_7__worklog_list_worklog_list_component__["a" /* WorklogListComponent */],
-                __WEBPACK_IMPORTED_MODULE_8__worklog_detail_worklog_detail_component__["a" /* WorklogDetailComponent */],
-                __WEBPACK_IMPORTED_MODULE_9__login_login_component__["a" /* LoginComponent */],
-                __WEBPACK_IMPORTED_MODULE_10__registration_registration_component__["a" /* RegistrationComponent */]
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* ReactiveFormsModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_http__["HttpModule"],
-                __WEBPACK_IMPORTED_MODULE_5__angular_router__["a" /* RouterModule */].forRoot([
-                    { path: '', component: __WEBPACK_IMPORTED_MODULE_7__worklog_list_worklog_list_component__["a" /* WorklogListComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */]] },
-                    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_9__login_login_component__["a" /* LoginComponent */] },
-                    { path: 'registration', component: __WEBPACK_IMPORTED_MODULE_10__registration_registration_component__["a" /* RegistrationComponent */] },
-                ])
-            ],
-            providers: [
-                __WEBPACK_IMPORTED_MODULE_11__services_auth_service__["a" /* AuthService */],
-                __WEBPACK_IMPORTED_MODULE_12__guards_auth_guard__["a" /* AuthGuard */],
-                {
-                    provide: __WEBPACK_IMPORTED_MODULE_0_angular2_jwt_angular2_jwt__["AuthHttp"],
-                    useFactory: authHttpServiceFactory,
-                    deps: [__WEBPACK_IMPORTED_MODULE_4__angular_http__["Http"]]
-                }
-            ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
-        })
-    ], AppModule);
-    return AppModule;
-}());
-
-//# sourceMappingURL=app.module.js.map
 
 /***/ })
 

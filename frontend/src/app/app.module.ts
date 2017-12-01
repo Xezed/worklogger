@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import {AuthService} from "./services/auth.service";
 import {AuthGuard} from "./guards/auth.guard";
+import {EntriesService} from "./services/entries.service";
 
 export function authHttpServiceFactory(http: Http, options: RequestOptions) {
   return new AuthHttp(new AuthConfig(), http, options);
@@ -23,7 +24,7 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     WorklogListComponent,
     WorklogDetailComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +41,7 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
   providers: [
     AuthService,
     AuthGuard,
+    EntriesService,
     {
       provide: AuthHttp,
       useFactory: authHttpServiceFactory,
