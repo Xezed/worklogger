@@ -16,7 +16,7 @@ export class AuthService {
   }
 
   registration(credentials){
-    return this.http.post('/auth/registration', JSON.stringify(credentials))
+    return this.http.post('/auth/registration/', JSON.stringify(credentials))
       .map(response => {
         let result = response.json();
 
@@ -25,7 +25,7 @@ export class AuthService {
   }
 
   login(credentials) {
-   return this.http.post('/auth/login', JSON.stringify(credentials))
+   return this.http.post('/auth/login/', credentials)
     .map(response => {
       let result = response.json();
 
