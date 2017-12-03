@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {durationValidator} from "./duration.validation";
 
 @Component({
   selector: 'app-worklog-detail',
@@ -11,20 +12,21 @@ export class WorklogDetailComponent implements OnInit {
   entryForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
-    this.createForm()
   }
 
   ngOnInit() {
+    console.log(this.entry)
+    this.createForm()
   }
 
   createForm() {
     this.entryForm = this.fb.group({
-      // duration: [this.entry.get('duration'), Validators.required],
-      project: [this.entry, Validators.required],
-      remarks: [this.entry],
+      duration: [this.entry['duration'], durationValidator(/^(0[0-9]|1[0-9]|2[0-4]):[0-5]?[0-9]:[0-5]?[0-9]/)],
+      project: [this.entry['project'], Validators.required],
+      remarks: [this.entry['remarks']],
       // date: [this.entry.get('date'), Validators.required],
-      lateLog: [this.entry]
-    })
+      lateLog: [this.entry['lateLog']]
+    });
   }
 
   onSubmit() {

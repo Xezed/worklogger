@@ -14,6 +14,6 @@ export class WorklogListComponent implements OnInit {
 
   ngOnInit() {
     this.entriesService.getEntries()
-      .subscribe(entries => this.entries = entries)
+      .subscribe(entries => this.entries = entries);
   }
 }
