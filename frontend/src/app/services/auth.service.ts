@@ -25,7 +25,7 @@ export class AuthService {
   }
 
   login(credentials) {
-   return this.http.post('/auth/login/', credentials)
+   return this.http.post('http://127.0.0.1:8000/auth/login/', credentials)
     .map(response => {
       let result = response.json();
 

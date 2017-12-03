@@ -16,5 +16,5 @@ if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += [
-    url(r'^.*', HomePage.as_view(), name='home'),
+    # url(r'^.*', HomePage.as_view(), name='home'),
 ]
