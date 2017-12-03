@@ -8,7 +8,7 @@ export class EntriesService {
   }
 
   getEntries() {
-    return this.authHttp.get('http://127.0.0.1:8000/entries')
+    return this.authHttp.get('http://127.0.0.1:8000/entries/')
       .map(response => response.json());
   }
 }

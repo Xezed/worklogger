@@ -560,7 +560,7 @@ var AuthService = /** @class */ (function () {
         }
     }
     AuthService.prototype.registration = function (credentials) {
-        return this.http.post('/auth/registration/', JSON.stringify(credentials))
+        return this.http.post('http://127.0.0.1:8000/auth/registration/', JSON.stringify(credentials))
             .map(function (response) {
             var result = response.json();
             console.log(result);
@@ -568,7 +568,7 @@ var AuthService = /** @class */ (function () {
     };
     AuthService.prototype.login = function (credentials) {
         var _this = this;
-        return this.http.post('/auth/login/', credentials)
+        return this.http.post('http://127.0.0.1:8000/auth/login/', credentials)
             .map(function (response) {
             var result = response.json();
             if (result && result.token) {
@@ -624,7 +624,7 @@ var EntriesService = /** @class */ (function () {
         this.authHttp = authHttp;
     }
     EntriesService.prototype.getEntries = function () {
-        return this.authHttp.get('/entries')
+        return this.authHttp.get('http://127.0.0.1:8000/entries')
             .map(function (response) { return response.json(); });
     };
     EntriesService = __decorate([
