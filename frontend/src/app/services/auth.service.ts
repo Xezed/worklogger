@@ -16,7 +16,7 @@ export class AuthService {
   }
 
   registration(credentials){
-    return this.http.post('http://127.0.0.1:8000/auth/registration/', JSON.stringify(credentials))
+    return this.http.post('http://127.0.0.1:8000/auth/registration/', credentials)
       .map(response => {
         let result = response.json();
 

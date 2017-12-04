@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {durationValidator} from "./duration.validation";
+import {EntriesService} from "../services/entries.service";
 
 @Component({
   selector: 'app-worklog-detail',
@@ -11,12 +12,11 @@ export class WorklogDetailComponent implements OnInit {
   @Input() entry: JSON;
   entryForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private entriesService: EntriesService) {
   }
 
   ngOnInit() {
-    console.log(this.entry)
-    this.createForm()
+    this.createForm();
   }
 
   createForm() {
@@ -25,11 +25,23 @@ export class WorklogDetailComponent implements OnInit {
       project: [this.entry['project'], Validators.required],
       remarks: [this.entry['remarks']],
       date: [this.entry['date'], Validators.required],
-      lateLog: [this.entry['lateLog']]
+      lateLog: [{value: this.entry['lateLog'], disabled: true}]
     });
   }
 
-  onSubmit() {
-    console.log(this.entryForm)
+  onUpdate() {
+    this.entriesService.onUpdate(this.entryForm.value, this.entry['id']).subscribe(
+      updatedPost => {
+          console.log(updatedPost);
+        }
+    );
+  }
+
+  onDelete() {
+    this.entriesService.onDelete(this.entry['id']).subscribe(
+      updatedPost => {
+          console.log(updatedPost);
+        }
+    );
   }
 }

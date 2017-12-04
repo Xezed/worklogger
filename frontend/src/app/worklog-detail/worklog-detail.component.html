@@ -1,4 +1,4 @@
-<form class="form-inline" [formGroup]="entryForm" novalidate (ngSubmit)="onSubmit()">
+<form class="form-inline" [formGroup]="entryForm" novalidate (ngSubmit)="onUpdate()">
 
     <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0"
            formControlName="project">
@@ -25,5 +25,6 @@
         </label>
     </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-warning">Update</button>
+    <button type="button" class="btn btn-danger" (click)="onDelete()">Delete</button>
 </form>
