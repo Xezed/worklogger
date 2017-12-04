@@ -13,7 +13,6 @@ import { RegistrationComponent } from './registration/registration.component';
 import {AuthService} from "./services/auth.service";
 import {AuthGuard} from "./guards/auth.guard";
 import {EntriesService} from "./services/entries.service";
-import {AppErrorHandler} from "./app-error-handler";
 
 export function authHttpServiceFactory(http: Http, options: RequestOptions) {
   return new AuthHttp(new AuthConfig(), http, options);

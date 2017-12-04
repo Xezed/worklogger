@@ -24,7 +24,7 @@ export class WorklogDetailComponent implements OnInit {
       duration: [this.entry['duration'], [Validators.pattern(/^(0[0-9]|1[0-9]|2[0-4]):[0-5]?[0-9]:[0-5]?[0-9]/)]],
       project: [this.entry['project'], Validators.required],
       remarks: [this.entry['remarks']],
-      // date: [this.entry.get('date'), Validators.required],
+      date: [this.entry['date'], Validators.required],
       lateLog: [this.entry['lateLog']]
     });
   }
