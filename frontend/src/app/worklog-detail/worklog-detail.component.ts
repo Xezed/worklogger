@@ -11,6 +11,7 @@ import {EntriesService} from "../services/entries.service";
 export class WorklogDetailComponent implements OnInit {
   @Input() entry: JSON;
   entryForm: FormGroup;
+  logDate;
 
   constructor(private fb: FormBuilder, private entriesService: EntriesService) {
   }
@@ -20,11 +21,14 @@ export class WorklogDetailComponent implements OnInit {
   }
 
   createForm() {
+    this.logDate = this.entry['date'].split('-');
     this.entryForm = this.fb.group({
       duration: [this.entry['duration'], [Validators.pattern(/^(0[0-9]|1[0-9]|2[0-4]):[0-5]?[0-9]:[0-5]?[0-9]/)]],
       project: [this.entry['project'], Validators.required],
       remarks: [this.entry['remarks']],
-      date: [this.entry['date'], Validators.required],
+      date:  [{'year': +this.logDate[0],
+              'month': +this.logDate[1],
+                'day': +this.logDate[2]}, Validators.required],
       lateLog: [{value: this.entry['lateLog'], disabled: true}]
     });
   }

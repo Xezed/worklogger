@@ -1,7 +1,7 @@
 import { AuthHttp, AuthConfig } from 'angular2-jwt/angular2-jwt';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule} from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {Http, HttpModule, RequestOptions} from '@angular/http';
 import { RouterModule } from "@angular/router";
 
@@ -13,6 +13,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import {AuthService} from "./services/auth.service";
 import {AuthGuard} from "./guards/auth.guard";
 import {EntriesService} from "./services/entries.service";
+import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 
 export function authHttpServiceFactory(http: Http, options: RequestOptions) {
   return new AuthHttp(new AuthConfig(), http, options);
@@ -30,6 +31,7 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     BrowserModule,
     ReactiveFormsModule,
     HttpModule,
+    NgbModule.forRoot(),
     RouterModule.forRoot(
       [
         { path: '', component: WorklogListComponent, canActivate: [AuthGuard]},
