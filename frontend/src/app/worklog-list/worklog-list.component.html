@@ -1,24 +1,28 @@
-<form class="form-inline" [formGroup]="entryForm" novalidate (ngSubmit)="onCreate()">
+<div class="row">
 
-    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0"
-           formControlName="project">
+	<form class="form-inline" [formGroup]="entryForm" novalidate (ngSubmit)="onCreate()">
 
-    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-        <input type="text" class="form-control"
-               formControlName="remarks">
-    </div>
+	    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0"
+	           formControlName="project">
 
-	<div class="input-group mb-2 mr-sm-2 mb-sm-0">
-		<input type="text" class="form-control datetime"
-		formControlName="duration">
-	</div>
+	    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+	        <input type="text" class="form-control"
+	               formControlName="remarks">
+	    </div>
 
-	<div class="input-group mb-2 mr-sm-2 mb-sm-0 datetime">
-		<input type="text" class="form-control"
-		formControlName="date">
-	</div>
+		<div class="input-group mb-2 mr-sm-2 mb-sm-0">
+			<input type="text" class="form-control datetime"
+			formControlName="duration">
+		</div>
 
-	<button type="submit" class="btn btn-primary">Create</button>
-</form>
+		<div class="input-group mb-2 mr-sm-2 mb-sm-0 datetime">
+			<input type="text" class="form-control"
+			formControlName="date">
+		</div>
 
-<app-worklog-detail *ngFor="let entry of entries" [entry]="entry"></app-worklog-detail>
+		<button type="submit" class="btn btn-primary">Create</button>
+	</form>
+
+	<app-worklog-detail *ngFor="let entry of entries" [entry]="entry"></app-worklog-detail>
+
+</div>
