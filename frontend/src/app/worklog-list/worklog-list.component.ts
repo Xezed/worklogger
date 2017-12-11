@@ -21,7 +21,7 @@ export class WorklogListComponent implements OnInit {
 
   createForm() {
     this.entryForm = this.fb.group({
-      duration: ['', [Validators.pattern(/^(0[0-9]|1[0-9]|2[0-4]):[0-5]?[0-9]:[0-5]?[0-9]/)]],
+      duration: ['00:00:00', [Validators.pattern(/^(0[0-9]|1[0-9]|2[0-4]):[0-5]?[0-9]:[0-5]?[0-9]/)]],
       project: ['', Validators.required],
       remarks: [''],
       date: ['', Validators.required],
