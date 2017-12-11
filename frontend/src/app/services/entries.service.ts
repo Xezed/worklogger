@@ -8,18 +8,23 @@ export class EntriesService {
   constructor(private authHttp: AuthHttp) {
   }
 
+  convertJSONDateToStr(date) {
+    return date['year'] + '-' + date['month'] + '-' + date['day'];
+  }
+
   getEntries() {
     return this.authHttp.get(this.url)
       .map(response => response.json());
   }
 
   onCreate(resource) {
+    resource.date = this.convertJSONDateToStr(resource.date)
     return this.authHttp.post(this.url, resource)
       .map(response => response.json())
   }
 
   onUpdate(resource, id) {
-    console.log(resource);
+    resource.date = this.convertJSONDateToStr(resource.date)
     return this.authHttp.patch(this.url + id, resource)
       .map(response => response.json())
   }

@@ -43,8 +43,8 @@ export class WorklogDetailComponent implements OnInit {
 
   onDelete() {
     this.entriesService.onDelete(this.entry['id']).subscribe(
-      updatedPost => {
-          console.log(updatedPost);
+      deletedPost => {
+          console.log(deletedPost);
         }
     );
   }

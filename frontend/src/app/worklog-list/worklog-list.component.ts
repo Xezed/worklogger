@@ -29,6 +29,9 @@ export class WorklogListComponent implements OnInit {
   }
 
   onCreate() {
-    this.entriesService.onCreate(this.entryForm.value);
+    this.entriesService.onCreate(this.entryForm.value).
+    subscribe(cretedPost => {
+      console.log(cretedPost)
+    });
   }
 }
