@@ -1,6 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {durationValidator} from "./duration.validation";
 import {EntriesService} from "../services/entries.service";
 
 @Component({
@@ -10,6 +9,7 @@ import {EntriesService} from "../services/entries.service";
 })
 export class WorklogDetailComponent implements OnInit {
   @Input() entry: JSON;
+  @Output() deleted: EventEmitter<any> = new EventEmitter();
   entryForm: FormGroup;
   logDate;
 
@@ -19,6 +19,7 @@ export class WorklogDetailComponent implements OnInit {
   ngOnInit() {
     this.createForm();
   }
+
 
   createForm() {
     this.logDate = this.entry['date'].split('-');
@@ -36,15 +37,15 @@ export class WorklogDetailComponent implements OnInit {
   onUpdate() {
     this.entriesService.onUpdate(this.entryForm.value, this.entry['id']).subscribe(
       updatedPost => {
-          console.log(updatedPost);
-        }
+        console.log(updatedPost);
+      }
     );
   }
 
   onDelete() {
     this.entriesService.onDelete(this.entry['id']).subscribe(
       deletedPost => {
-          console.log(deletedPost);
+          this.deleted.emit(this.entry);
         }
     );
   }

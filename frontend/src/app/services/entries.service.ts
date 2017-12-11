@@ -18,19 +18,18 @@ export class EntriesService {
   }
 
   onCreate(resource) {
-    resource.date = this.convertJSONDateToStr(resource.date)
+    resource.date = this.convertJSONDateToStr(resource.date);
     return this.authHttp.post(this.url, resource)
       .map(response => response.json())
   }
 
   onUpdate(resource, id) {
-    resource.date = this.convertJSONDateToStr(resource.date)
+    resource.date = this.convertJSONDateToStr(resource.date);
     return this.authHttp.patch(this.url + id, resource)
       .map(response => response.json())
   }
 
   onDelete(id) {
-    console.log(id);
     return this.authHttp.delete(this.url + id)
       .map(response => response.json())
   }

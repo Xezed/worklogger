@@ -32,4 +32,7 @@
 </div>
 
 
-<app-worklog-detail *ngFor="let entry of entries" [entry]="entry"></app-worklog-detail>
+<app-worklog-detail
+		(deleted)="onDeleted($event)"
+		*ngFor="let entry of entries" [entry]="entry">
+</app-worklog-detail>

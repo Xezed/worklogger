@@ -34,4 +34,9 @@ export class WorklogListComponent implements OnInit {
       console.log(cretedPost)
     });
   }
+
+  onDeleted(entry) {
+    let index = this.entries.indexOf(entry);
+    this.entries.splice(index, 1)
+  }
 }
